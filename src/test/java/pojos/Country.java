@@ -1,31 +1,26 @@
 package pojos;
 
-public class CountryPojo {
-    /*
-    “country”: {
-        “id”: 3,
-        “name”: “USA”,
-        “states”: null
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Country {
+        /*
+        "country": {
+        "id": 3,
+        "name": "USA",
+        "states": null
     }
      */
-    private Integer id;
+
+    private int id;
     private String name;
     private String states;
 
-    public CountryPojo() {
-    }
-
-    public CountryPojo(Integer id, String name, String states) {
-        this.id = id;
-        this.name = name;
-        this.states = states;
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,13 +40,21 @@ public class CountryPojo {
         this.states = states;
     }
 
+    public Country() {
+    }
+
+    public Country(int id, String name, String states) {
+        this.id = id;
+        this.name = name;
+        this.states = states;
+    }
+
     @Override
     public String toString() {
-        return "CountryPojo{" +
+        return "Country{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", states='" + states + '\'' +
                 '}';
     }
-
 }

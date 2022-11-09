@@ -1,29 +1,21 @@
 package pojos;
 
-public class AccountsPojo {
- /*
-“accounts”: [
-    {
-            “id”: 107250,
-            “description”: “New Account_6thGenQA_01",
-            “balance”: 11190,
-            “accountType”: “CHECKING”,
-            “accountStatusType”: “ACTIVE”,
-            “createDate”: “2021-11-24T23:00:00Z”,
-            “closedDate”: “2022-11-24T23:00:00Z”,
-            “employee”: null,
-            “accountlogs”: null
-    }*/
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Account {
+    private Integer id;
     private String description;
     private Integer balance;
     private String accountType;
     private String accountStatusType;
     private String createDate;
     private String closedDate;
-    private Object employee;
-    private Object accountlogs;
+    private String employee;
+    private String accountlogs;
 
-    public AccountsPojo(String description, Integer balance, String accountType, String accountStatusType, String createDate, String closedDate, Object employee, Object accountlogs) {
+    public Account(Integer id, String description, Integer balance, String accountType, String accountStatusType, String createDate, String closedDate, String employee, String accountlogs) {
+        this.id = id;
         this.description = description;
         this.balance = balance;
         this.accountType = accountType;
@@ -34,7 +26,15 @@ public class AccountsPojo {
         this.accountlogs = accountlogs;
     }
 
-    public AccountsPojo() {
+    public Account() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -52,7 +52,6 @@ public class AccountsPojo {
     public void setBalance(Integer balance) {
         this.balance = balance;
     }
-
     public String getAccountType() {
         return accountType;
     }
@@ -85,33 +84,34 @@ public class AccountsPojo {
         this.closedDate = closedDate;
     }
 
-    public Object getEmployee() {
+    public String getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Object employee) {
+    public void setEmployee(String employee) {
         this.employee = employee;
     }
 
-    public Object getAccountlogs() {
+    public String getAccountlogs() {
         return accountlogs;
     }
 
-    public void setAccountlogs(Object accountlogs) {
+    public void setAccountlogs(String accountlogs) {
         this.accountlogs = accountlogs;
     }
 
     @Override
     public String toString() {
-        return "AccountsPojo{" +
-                "description='" + description + '\'' +
+        return "Account{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
                 ", balance=" + balance +
                 ", accountType='" + accountType + '\'' +
                 ", accountStatusType='" + accountStatusType + '\'' +
                 ", createDate='" + createDate + '\'' +
                 ", closedDate='" + closedDate + '\'' +
-                ", employee=" + employee +
-                ", accountlogs=" + accountlogs +
+                ", employee='" + employee + '\'' +
+                ", accountlogs='" + accountlogs + '\'' +
                 '}';
     }
 

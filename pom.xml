@@ -34,6 +34,17 @@
             <artifactId>gson</artifactId>
             <version>2.10</version>
         </dependency>
+        <!--@JsonIgnoreProperties(ignoreUnknown = true) import etmek icin yukledik -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.14.0-rc3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
 
 
 
