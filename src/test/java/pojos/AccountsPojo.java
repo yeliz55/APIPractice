@@ -114,4 +114,5 @@ public class AccountsPojo {
                 ", accountlogs=" + accountlogs +
                 '}';
     }
+
 }
